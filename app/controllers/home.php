@@ -15,7 +15,7 @@ class home {
   		$results = json_encode(curl_exec($ch),true);
 
   		$tpl = newTpl();
-  		$tpl->results = $results();
+  		$tpl->results = $results;
   		$tpl->display("home/get_movies.tpl.php");
 
 
