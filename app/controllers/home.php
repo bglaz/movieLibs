@@ -20,4 +20,21 @@ class home {
   	}
   }
 
+  function do_madlib() {
+  	$data = $_POST['movie'];
+  	json_decode($data,true);
+
+  	$plot = $data['plot'];
+
+  	//send text to node server to get POS data
+  	$ch = curl_init("http://localhost:8080");
+  	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  	$results = json_decode(curl_exec($ch),true);
+
+
+  	$tpl = newTpl();
+  	$tpl->results = $results;
+  	$tpl->display("home/do_madlib.tpl.php");
+  }
+
 }
