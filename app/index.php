@@ -47,5 +47,6 @@ try {
     $found_route = $router->findRoute($url);
     $dispatcher->dispatch( $found_route );
 } catch (Exception $e){
-    echo "you're dumb";
+    header('Location:  /home');
+    exit();
 } 
