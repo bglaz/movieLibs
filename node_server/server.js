@@ -10,15 +10,10 @@ function posTag(text) {
 	for(var i in taggedWords) {
 		;
 	}
-	return results;
+	return taggedWords;
 }
 
 http.createServer(function(request, response) {
-	request.on("end", function() {
-		var _get = url.parse(request.url, true).query;
-		response.writeHead(200, {'Cotent-type': 'application/json'});
-		response.end();
-	});
 
 	if(request.method == 'POST') {
 	    request.on('data', function (data) {
@@ -28,7 +23,9 @@ http.createServer(function(request, response) {
 	        	request.connection.destroy();
 	        }
 	        var data = qs.parse(body);
-	        console.log(data);
+	        var results = posTag(data['text']);
+	        response.writeHead(200, {'Cotent-type': 'application/json'});
+			response.end(JSON.stringify(results));
 	    });
 	}
 }).listen(8080);
