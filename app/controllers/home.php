@@ -27,6 +27,7 @@ class home {
 
   function do_madlib() {
   	$data = $_POST['movie'];
+    $movie64 = $data;
 
   	$data = json_decode(base64_decode($data),true);
 
@@ -45,6 +46,7 @@ class home {
     $tpl->header = $tpl->fetch("header.tpl.php");
     $tpl->footer = $tpl->fetch("footer.tpl.php");
   	$tpl->results = $results;
+    $tpl->movie64 = $movie64;
   	$tpl->display("home/do_madlib.tpl.php");
   }
 
