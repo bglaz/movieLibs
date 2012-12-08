@@ -4,6 +4,10 @@ a{ cursor: pointer;}
 
 <?php echo $this->header; ?>
 
+<form id="myForm" action="/do_madlib" method="POST">
+	<input id="movie" type="hidden" name="movie" value="" />
+</form>
+
 <div class="row">
 	<div class="span12">
 		<div class="well">
@@ -20,9 +24,20 @@ foreach($this->results as $result){
 
 <div class="span2">
 	<img src="<?= $result->poster ?>" /><br />
-	<a><?= $result->title ?></a>
+	<a data-json="<?= json_encode($result);?>"><?= $result->title ?></a>
 </div>
 <?php } ?>
 </div>
 
 <?php echo $this->footer; ?>
+
+<script type="text/javascript">
+
+$(function() {
+	$('a').click(function() {
+	 	$('#movie').val($(this).data('json'));
+	 	$('#myForm').submit();
+ 	});
+});
+
+</script>
