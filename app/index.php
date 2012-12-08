@@ -8,8 +8,12 @@ $router = new Router;
 
 //Get an instance of Dispatcher
 $dispatcher = new Dispatcher;
-$dispatcher->setSuffix('Controller');
 $dispatcher->setClassPath('controllers');
+
+
+$home_route = new Route( '/home' );
+$home_route->setMapClass( 'home' )->setMapMethod( 'index' );
+$router->addRoute( 'home', $home_route );
 
 //Set up a 'catch all' default route and add it to the Router.
 //You may want to set up an external file, define your routes there, and
