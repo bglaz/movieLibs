@@ -1,4 +1,7 @@
 <?php
+require("tumblr/defaults.php");
+require("tumblr/lib/autoloader.php");
+
 class home {
   function index() {
     $tpl = newTpl();
