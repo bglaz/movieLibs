@@ -25,6 +25,11 @@ $router->addRoute( 'home', $home_route );
 //Set up a 'catch all' default route and add it to the Router.
 //You may want to set up an external file, define your routes there, and
 // and include that file in place of this code block.
+$rt = new Route('/:method');
+$rt->setMapClass('home')
+          ->addDynamicElement(':method', ':method');
+$router->addRoute( 'method-home', $rt );
+
 $std_route = new Route('/:class/:method/:id');
 $std_route->addDynamicElement(':class', ':class')
           ->addDynamicElement(':method', ':method')
