@@ -5,15 +5,19 @@ class home {
     $tpl->display("home/index.tpl.php");
   }
 
-  function getMovies() {
+  function get_movies() {
   	if(!empty($_POST)) {
   		$query = addslashes($_POST['movie_title']);
-  		$url = "http://imdbapi.org/?title=$url&type=json&plot=full&episode=1&limit=5&yg=0&mt=none&lang=en-US&offset=&aka=simple&release=simple";
+  		$url = "http://imdbapi.org/?title=$query&type=json&plot=full&episode=1&limit=5&yg=0&mt=none&lang=en-US&offset=&aka=simple&release=simple";
 
   		$ch = curl_init($url);
   		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   		$results = json_encode(curl_exec($ch),true);
-  		var_dump(($results));
+
+  		$tpl = newTpl();
+  		$tpl->results = $results();
+  		$tpl->display("home/get_movies.tpl.php");
+
 
   	}
   }
