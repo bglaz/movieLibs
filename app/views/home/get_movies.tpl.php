@@ -15,6 +15,7 @@ a{ cursor: pointer;}
 <div class="row">
 <?php
 foreach($this->results as $result){
+//echo json_encode($result);
 ?>
 
 <div class="span2">

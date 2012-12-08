@@ -59,18 +59,26 @@ function posTag(text) {
 }
 
 http.createServer(function(request, response) {
+console.log("handling a request");
 
 	if(request.method == 'POST') {
+    console.log("it's a POST");
+    var body = '';
+
 	    request.on('data', function (data) {
-	    	var body = '';
+
 	    	body += data;
 	        if (body.length > 1e6) {
 	        	request.connection.destroy();
 	        }
-	        var data = qs.parse(body);
-	        var results = posTag(data['text']);
-	        response.writeHead(200, {'Cotent-type': 'application/json'});
-			response.end(JSON.stringify(results));
 	    });
+      
+      request.on('end', function() {
+	        data = qs.parse(body);
+          console.log(data.text);
+	        results = posTag(data['text']);
+	        response.writeHead(200, {'Cotent-type': 'application/json'});
+          response.end(JSON.stringify(results));
+      });
 	}
 }).listen(8080);
