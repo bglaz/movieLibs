@@ -28,7 +28,7 @@ class home {
   function do_madlib() {
   	$data = $_POST['movie'];
 
-  	$data = json_decode($data,true);
+  	$data = json_decode(base64_decode($data),true);
 
   	$plot = $data['plot'];
 
