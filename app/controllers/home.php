@@ -1,8 +1,8 @@
 <?php
-error_log("loaded file");
 class home {
   function index() {
-    echo "home";
+    $tpl = newTpl();
+    $tpl->display("home/index.tpl.php");
   }
 
 }

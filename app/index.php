@@ -1,5 +1,10 @@
 <?php
 include('savant/Savant3.php');
+function newTpl(){
+  $tpl = new Savant3();
+  $tpl->setPath("template","views");
+  return $tpl;
+}
 
 //Include a PageError class which can be used later. You supply this class.
 include('php-router/php-router.php');
