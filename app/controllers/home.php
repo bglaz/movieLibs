@@ -51,4 +51,8 @@ EOF;
   	$tpl->display("home/do_madlib.tpl.php");
   }
 
+  function finish_madlib() {
+
+  }
+
 }
