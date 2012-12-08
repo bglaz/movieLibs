@@ -12,13 +12,11 @@ class home {
 
   		$ch = curl_init($url);
   		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  		$results = json_encode(curl_exec($ch),true);
+  		$results = curl_exec($ch);
 
   		$tpl = newTpl();
-  		$tpl->results = $results;
+  		$tpl->results = json_decode($results);
   		$tpl->display("home/get_movies.tpl.php");
-
-
   	}
   }
 
