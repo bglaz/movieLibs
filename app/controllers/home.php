@@ -34,6 +34,9 @@ class home {
   	//send text to node server to get POS data
   	$ch = curl_init("http://localhost:8080");
   	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  	curl_setopt($ch, CURLOPT_POST, true);
+  	curl_setopt($ch, CURLOPT_POSTFIELDS, array('text' => $plot));
+  	
   	$results = json_decode(curl_exec($ch),true);
 
 
