@@ -24,7 +24,7 @@ foreach($this->results as $result){
 
 <div class="span2">
 	<img src="<?= $result->poster ?>" /><br />
-	<a data-json="<?= json_encode($result);?>"><?= $result->title ?></a>
+	<a data-json="<?=base64_encode(json_encode($result));?>"><?= $result->title ?></a>
 </div>
 <?php } ?>
 </div>
