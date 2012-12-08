@@ -1,8 +1,9 @@
+<?php echo $this->header; ?>
 <?php
 foreach($this->results as $result){
 ?>
 <img src="<?= $result->poster ?>" />
-<br /><br />
 <?php
 }
 ?>
+<?php echo $this->footer; ?>
