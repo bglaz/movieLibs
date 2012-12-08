@@ -7,6 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <style>

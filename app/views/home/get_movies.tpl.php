@@ -29,8 +29,6 @@ foreach($this->results as $result){
 <?php } ?>
 </div>
 
-<?php echo $this->footer; ?>
-
 <script type="text/javascript">
 
 $(function() {
@@ -41,3 +39,5 @@ $(function() {
 });
 
 </script>
+
+<?php echo $this->footer; ?>
