@@ -32,7 +32,7 @@ function posTag(text) {
 	for(var i in taggedWords) {
 
 		//check to see if word matches a part of speech that we want
-		if(parts[taggedWords[i][1]]) {
+		if(parts[taggedWords[i][1]] && taggedWords[i][0] != "is") {
 			candidates.push({
 				word: 	taggedWords[i][0],
 				pos: 	parts[taggedWords[i][1]]
