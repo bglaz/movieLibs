@@ -20,10 +20,12 @@
 
 <div class="row">
 	<? foreach($this->results['data'] as $word) { ?>
+	<? if(!empty($word['pos'])) { ?>
 		<div class="span6 clearfix">
 			<label><?=$word['pos'];?>:</label>
 			<input type="text" data-orig_word="<?=$word['word'];?>" />
 		</div>
+	<? } ?>
 	<? } ?>
 </div>
 
@@ -51,7 +53,7 @@
 
 				var search_for = $(this).data('orig_word');
 				var replace_with = "<span class='user_input'>" + $(this).val() + "</span>";
-				var regex = new RegExp(search_for,"gi");
+				var regex = new RegExp("\\b" + search_for + "\\b","gi");
 
 				orig_story = orig_story.replace(regex,replace_with);
 			});
