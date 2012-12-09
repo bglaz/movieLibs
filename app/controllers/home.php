@@ -75,6 +75,19 @@ class home {
 
 
   private function get_url_from_tag($tag) {
-      
+    $tag = urlencode($tag);
+    $api_key = "KuLUj5eO82pXobQxLSORvDbwAApySZU06Ai9BUUon5DMtBXT7x";
+    $url = "http://api.tumblr.com/v2/tagged?tag=$tag&api_key=$api_key";
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $results = json_decode(curl_exec($ch));
+    foreach ($results->response as $p) {
+      if ($p->type == "photo") {
+        $post = $p;
+        break;
+      }
+    }
+    return $post->photos[0]->original_size->url;
   }
 }
