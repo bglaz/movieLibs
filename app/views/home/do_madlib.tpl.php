@@ -32,7 +32,7 @@
 </div>
 
 <form id="myForm" action="/finish_madlib" method="POST">
-	<input type="hidden" name="movie" value="<?=$this->movie64;?>" />
+	<input type="hidden" name="movie64" value="<?=$this->movie64;?>" />
 	<input id="final_story" type="hidden" name="final_story" value="" />
 </form>
 

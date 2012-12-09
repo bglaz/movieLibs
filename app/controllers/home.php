@@ -54,7 +54,16 @@ class home {
   }
 
   function finish_madlib() {
+  	$data = $_POST;
+  	$movie64 = $data['movie64'];
+  	$final_story = $data['final_story'];
 
+  	$tpl = newTpl();
+    $tpl->header = $tpl->fetch("header.tpl.php");
+    $tpl->footer = $tpl->fetch("footer.tpl.php");
+    $tpl->movie64 = $movie64;
+    $tpl->final_story = $final_story;
+    $tpl->display("home/finish_madlib.tpl.php");
   }
 
 }
