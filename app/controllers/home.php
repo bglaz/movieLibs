@@ -66,4 +66,11 @@ class home {
     $tpl->display("home/finish_madlib.tpl.php");
   }
 
+
+
+
+
+  private function get_url_from_tag($tag) {
+      
+  }
 }
