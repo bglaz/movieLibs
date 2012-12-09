@@ -77,7 +77,7 @@ class home {
   private function get_url_from_tag($tag) {
     $tag = urlencode($tag);
     $api_key = "KuLUj5eO82pXobQxLSORvDbwAApySZU06Ai9BUUon5DMtBXT7x";
-    $url = "http://api.tumblr.com/v2/tagged?tag=$tag&api_key=$api_key";
+    $url = "http://api.tumblr.com/v2/tagged?limit=20&tag=$tag&api_key=$api_key";
 
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
