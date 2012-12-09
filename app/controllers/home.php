@@ -74,10 +74,10 @@ class home {
     $photo_url = $_POST["img"];
     $story = strip_tags($_POST["story"]);
 
-    $cmd = "ruby ../post.rb ";
+    $cmd = "/Users/mtw/.rvm/bin/ruby-1.9.2-p320 ../post.rb ";
     $cmd .= $photo_url. " ";
-    $cmd .= '"'.$story.'"';
-    print_r(shell_exec($cmd));
+    $cmd .= '"'.$story.'" 2>&1';
+    echo shell_exec($cmd);
   }
 
 
