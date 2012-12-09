@@ -61,7 +61,7 @@ class home {
   	$tpl = newTpl();
     $tpl->header = $tpl->fetch("header.tpl.php");
     $tpl->footer = $tpl->fetch("footer.tpl.php");
-    $tpl->movie64 = $movie64;
+    $tpl->movie = json_decode(base64_decode($movie64),true);
     $tpl->final_story = $final_story;
     $tpl->display("home/finish_madlib.tpl.php");
   }
