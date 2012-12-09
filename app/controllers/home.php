@@ -57,12 +57,16 @@ class home {
   	$data = $_POST;
   	$movie64 = $data['movie64'];
   	$final_story = $data['final_story'];
+  	$orig_data = json_decode(base64_decode($movie64),true);
+
+  	$img = $this->get_url_from_tag($orig_data['title']);
 
   	$tpl = newTpl();
     $tpl->header = $tpl->fetch("header.tpl.php");
     $tpl->footer = $tpl->fetch("footer.tpl.php");
-    $tpl->movie = json_decode(base64_decode($movie64),true);
+    $tpl->movie = $orig_data;
     $tpl->final_story = $final_story;
+    $tpl->img = $img;
     $tpl->display("home/finish_madlib.tpl.php");
   }
 

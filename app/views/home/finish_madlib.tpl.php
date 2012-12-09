@@ -10,7 +10,9 @@
 <h3><?=$this->movie['title'];?></h3>
 
 <div class="row">
-	<div class="span12" style="font-size: 12pt;">
+	<div class="span12" style="font-size: 12pt; line-height: 1.3em;">
+		<img src="<?=$this->img;?>" /><br />
+
 		<?=stripslashes($this->final_story);?>
 	</div>
 </div>
