@@ -23,7 +23,7 @@
 	<? if(!empty($word['pos'])) { ?>
 		<div class="span6 clearfix">
 			<label><?=$word['pos'];?>:</label>
-			<input type="text" data-orig_word="<?=$word['word'];?>" />
+			<input type="text" data-orig_word="<?=htmlentities($word['word']);?>" />
 		</div>
 	<? } ?>
 	<? } ?>
