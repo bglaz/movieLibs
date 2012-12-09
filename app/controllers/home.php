@@ -84,10 +84,10 @@ class home {
     $results = json_decode(curl_exec($ch));
     foreach ($results->response as $p) {
       if ($p->type == "photo") {
-        $post = $p;
-        break;
+        $images[] = $p->photos[0]->original_size->url;
       }
     }
-    return $post->photos[0]->original_size->url;
+    shuffle($images);
+    return $images[0];
   }
 }
