@@ -72,7 +72,12 @@ class home {
 
   function post_madlib() {
     $photo_url = $_POST["img"];
-    $story = $_POST["story"];
+    $story = strip_tags($_POST["story"]);
+
+    $cmd = "ruby ../post.rb ";
+    $cmd .= $photo_url. " ";
+    $cmd .= '"'.$story.'"';
+    print_r(shell_exec($cmd));
   }
 
 

@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'tumblr_client'
 
 Tumblr.configure do |config|
@@ -6,7 +7,6 @@ Tumblr.configure do |config|
     config.oauth_token = "UqbqvDdYgFhmyhf4ACKAxm0aQBvLySGiBH46zuVHSoZ6IbGX52"
     config.oauth_token_secret = "JlDHYu9QZZJ7dtLL04i0bPLaGCwayWLTaYJiVyv4DeWKv7mA9X"
 end
-
 
 client = Tumblr.new
 photo_url = ARGV[0]
