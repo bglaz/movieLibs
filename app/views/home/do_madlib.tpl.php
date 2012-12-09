@@ -39,7 +39,7 @@
 </form>
 
 <script type="text/javascript">
-	var orig_story = "<?=$this->results['orig_text'];?>";
+	var orig_story = "<?=htmentities($this->results['orig_text']);?>";
 	$(function() {
 		$('#go_btn').click(function() {
 			var user_inputs = $('input[type="text"]');
