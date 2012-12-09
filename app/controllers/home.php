@@ -70,6 +70,11 @@ class home {
     $tpl->display("home/finish_madlib.tpl.php");
   }
 
+  function post_madlib() {
+    $photo_url = $_POST["img"];
+    $story = $_POST["story"];
+  }
+
 
 
 
